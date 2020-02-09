@@ -25,6 +25,14 @@ docker run -it <dockerID>/<appname> sh
 
 docker exec -it <containerID> sh
 
+# run a test command in a running container
+
+docker run -it <containerID> npm run test
+
+# run a test command in a running container with hot reload
+
+docker exec -it <containerID> npm run test
+
 # run containers with docker-compose
 
 docker-compose up

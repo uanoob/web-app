@@ -11,3 +11,12 @@ services:
       dockerfile: Dockerfile.dev
     ports:
       - '3000:3000'
+  tests:
+    restart: always
+    volumes:
+      - /usr/app/node_modules
+      - .:/usr/app
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: ['npm', 'run', 'test']
