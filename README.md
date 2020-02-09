@@ -1,5 +1,5 @@
 # web-app
-React app and Docker and Docker-Compose
+React app, docker, docker-compose, nginx
 
 # lists running docker containers
 
@@ -11,15 +11,19 @@ docker ps --all
 
 # build
 
-docker build -t \<dockerID>/\<appname> .
+docker build -t \<containerID> .
 
-# run app
+# run app with port routing
 
-docker run -p 8080:8080 \<dockerID>/\<appname>
+docker run -p 8080:8080 \<containerID>
+
+# run nginx server with port routing
+
+docker run -p 8080:80 \<containerID>
 
 # run app with shell
 
-docker run -it \<dockerID>/\<appname> sh
+docker run -it \<containerID> sh
 
 # run a command in a running container with shell
 
