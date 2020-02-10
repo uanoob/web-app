@@ -13,5 +13,7 @@ RUN npm run build
 
 # Specify a base image: phase - run
 FROM nginx
+# Define the network ports that this container will listen on at runtime.
+EXPOSE 80
 # Copy folder from build stage to the dest path in the image's filesystem
 COPY --from=builder /usr/app/build /usr/share/nginx/html
